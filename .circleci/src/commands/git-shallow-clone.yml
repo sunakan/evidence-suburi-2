@@ -15,6 +15,7 @@ steps:
         echo "現在ビルド中のブランチ名: ${CIRCLE_BRANCH}"
         echo "リポジトリURL: ${CIRCLE_REPOSITORY_URL}"
         echo "コミットのSHA1ハッシュ: ${CIRCLE_SHA1}"
+        echo "pwd: ${PWD}"
   - run:
       name: git shallow clone
       command: |
