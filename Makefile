@@ -1,6 +1,10 @@
 .PHONY: up
 up:
-	@docker compose up -d
+	@docker compose up -d db
+
+.PHONY: up-evidence
+up-evidence:
+	@docker compose run --rm --service-ports tool npm --prefix ./my-evidence run dev
 
 .PHONY: down
 down:
