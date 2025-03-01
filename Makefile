@@ -25,3 +25,7 @@ show-ddl:
 .PHONY: import-dataset
 import-dataset:
 	@docker compose run --rm tool bash -c 'ls -1 data/ | xargs -I{} bash scripts/04-import-dataset.sh data/{}'
+
+.PHONY: gen-circleci-config
+gen-circleci-config:
+	@docker compose run --rm tool bash -c 'bash .circleci/bin/generate-config.sh'
