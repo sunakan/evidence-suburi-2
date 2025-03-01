@@ -1,0 +1,10 @@
+#
+# validate config
+#
+description: validate config
+steps:
+  - run:
+      name: diff .circleci/config.yml /tmp/circleci-config.yml
+      command: |
+        .circleci/bin/generate-config.sh /tmp/circleci-config.yml
+        diff -u .circleci/config.yml /tmp/circleci-config.yml

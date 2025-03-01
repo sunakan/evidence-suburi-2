@@ -7,3 +7,4 @@ executor:
 steps:
   - checkout
   - debug
+  - validate-config
