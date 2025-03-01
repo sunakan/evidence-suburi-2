@@ -6,7 +6,7 @@
 
 ## ghcr(github container registry)
 
-- https://github.com/sunakan?tab=packages
+- https://github.com/users/sunakan/packages/container/package/evidence-suburi-2-tool
 
 ## evidence
 
