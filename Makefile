@@ -32,5 +32,7 @@ gen-circleci-config:
 
 .PHONY: build-and-push-image
 build-and-push-image:
+	$(eval IMAGE_REPO := ghcr.io/sunakan/evidence-suburi-2-tool)
 	$(eval IMAGE_TAG := $(shell git rev-list -1 HEAD -- Dockerfile))
-	docker build . --tag "evidence-suburi-2:${IMAGE_TAG}"
+	docker build . --tag "${IMAGE_REPO}:${IMAGE_TAG}"
+	docker push "${IMAGE_REPO}:${IMAGE_TAG}"
