@@ -13,6 +13,7 @@ services:
       - 5432:5432
   tool:
     build: .
+    working_dir: /app/
     volumes:
       - type: bind
         source: ${PWD}/
