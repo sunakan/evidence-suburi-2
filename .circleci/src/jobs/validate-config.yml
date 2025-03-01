@@ -5,4 +5,5 @@ resource_class: arm.medium
 executor:
   name: my-circleci-cli
 steps:
-  - git-shallow-clone
+  - checkout
+  - debug

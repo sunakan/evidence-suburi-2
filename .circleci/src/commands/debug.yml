@@ -1,0 +1,16 @@
+#
+# debug
+#
+description: debug
+steps:
+  - run:
+      name: デバッグ
+      command: |
+        #!/usr/bin/env sh
+        set -eu
+        echo "pwd: ${PWD}"
+        # プロジェクトの値と変数
+        # https://circleci.com/docs/ja/variables/
+        echo "現在ビルド中のブランチ名: ${CIRCLE_BRANCH}"
+        echo "リポジトリURL: ${CIRCLE_REPOSITORY_URL}"
+        echo "コミットのSHA1ハッシュ: ${CIRCLE_SHA1}"
