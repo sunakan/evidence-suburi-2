@@ -38,7 +38,7 @@ jobs:
     validate-config:
         executor:
             name: my-circleci-cli
-        resource_class: small
+        resource_class: arm.medium
         steps:
             - git-shallow-clone
 version: 2.1

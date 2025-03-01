@@ -1,7 +1,7 @@
 #
 # circleci packで生成するconfigが一致するかチェック
 #
-resource_class: small
+resource_class: arm.medium
 executor:
   name: my-circleci-cli
 steps:
