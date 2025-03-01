@@ -13,11 +13,15 @@ services:
       - 5432:5432
   tool:
     build: .
-    environment:
-      CIRCLECI_CLI_TELEMETRY_OPTOUT: true
     volumes:
       - type: bind
         source: ${PWD}/
+        target: /app/
+  evidence:
+    build: ./my-evidence/
+    volumes:
+      - type: bind
+        source: ${PWD}/my-evidence/
         target: /app/
     ports:
       - 3000:3000

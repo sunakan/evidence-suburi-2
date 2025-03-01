@@ -4,7 +4,7 @@ up:
 
 .PHONY: up-evidence
 up-evidence:
-	@docker compose run --rm --service-ports tool npm --prefix ./my-evidence run dev
+	@docker compose run --rm --service-ports evidence npm run dev
 
 .PHONY: down
 down:
@@ -29,3 +29,8 @@ import-dataset:
 .PHONY: gen-circleci-config
 gen-circleci-config:
 	@docker compose run --rm tool bash -c 'bash .circleci/bin/generate-config.sh'
+
+.PHONY: build-and-push-image
+build-and-push-image:
+	$(eval IMAGE_TAG := $(shell git rev-list -1 HEAD -- Dockerfile))
+	docker build . --tag "evidence-suburi-2:${IMAGE_TAG}"
