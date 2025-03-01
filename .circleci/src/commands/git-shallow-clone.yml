@@ -1,0 +1,34 @@
+#
+# git shallow clone
+#
+# git cloneされていない前提のscriptのため、.circleci/bin/に書き出せない
+#
+description: git shallow clone
+steps:
+  - run:
+      name: 変数表示(デバッグ用)
+      command: |
+        #!/usr/bin/env sh
+        set -eu
+        # プロジェクトの値と変数
+        # https://circleci.com/docs/ja/variables/
+        echo "現在ビルド中のブランチ名: ${CIRCLE_BRANCH}"
+        echo "リポジトリURL: ${CIRCLE_REPOSITORY_URL}"
+        echo "コミットのSHA1ハッシュ: ${CIRCLE_SHA1}"
+  - run:
+      name: git shallow clone
+      command: |
+        #!/usr/bin/env sh
+        set -eu
+        #set -x
+        # -e: エラーが発生した時点でスクリプトを終了
+        # -u: 未定義の変数を使用した場合にエラーを発生
+        # -x: スクリプトの実行内容を表示(debugで利用)
+
+        export SSH_CONFIG_DIR="${SSH_CONFIG_DIR:-"${HOME}/.ssh"}"
+        echo "SSH CONFIG DIR: '${SSH_CONFIG_DIR}'"
+        git --version
+
+        mkdir -p "${SSH_CONFIG_DIR}"
+
+        git clone --depth=1 --branch "${CIRCLE_BRANCH}" --single-branch "${CIRCLE_REPOSITORY_URL}" .

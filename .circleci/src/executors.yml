@@ -1,0 +1,11 @@
+#
+# Executor
+#
+# jobでdocker imageを直指定するのではなく、executorでテンプレートを用意
+# 本来小規模では不要(docker imageを直指定で良い)
+#
+executors:
+  my-circleci-cli:
+    working_directory: /app
+    docker:
+      - image: ghcr.io/sunakan/evidence-suburi-2-tool:latest

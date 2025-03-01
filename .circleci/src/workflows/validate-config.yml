@@ -1,0 +1,5 @@
+#
+# circleci packで生成するconfigが一致するかチェック
+#
+jobs:
+  - validate-config

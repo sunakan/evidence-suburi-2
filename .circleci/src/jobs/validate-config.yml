@@ -1,0 +1,8 @@
+#
+# circleci packで生成するconfigが一致するかチェック
+#
+resource_class: small
+executor:
+  name: my-circleci-cli
+steps:
+  - git-shallow-clone
