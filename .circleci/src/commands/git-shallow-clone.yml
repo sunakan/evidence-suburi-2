@@ -30,6 +30,4 @@ steps:
         echo "SSH CONFIG DIR: '${SSH_CONFIG_DIR}'"
         git --version
 
-        mkdir -p "${SSH_CONFIG_DIR}"
-
         git clone --depth=1 --branch "${CIRCLE_BRANCH}" --single-branch "${CIRCLE_REPOSITORY_URL}" .
