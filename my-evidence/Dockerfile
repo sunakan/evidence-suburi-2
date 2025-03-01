@@ -25,19 +25,3 @@ RUN adduser app && chown app:app /app
 COPY --chown=app:app . .
 USER app
 RUN npm install
-
-#
-# curl
-# -f: HTTPサーバエラーが発生した時、失敗させる
-# -s: サイレントモード
-# -S: エラー時、エラーを表示
-# -L: リダイレクトに追従
-#
-
-#
-# tar
-# -x: 抽出。tarファイルの内容を展開
-# -z: gzip圧縮されたアーカイブを処理
-# -C: 抽出先のディレクトリを指定
-# --strip-components=1: 指定された数のディレクトリ階層を除去
-#
