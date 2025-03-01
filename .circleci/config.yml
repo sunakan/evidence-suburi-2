@@ -1,0 +1,13 @@
+jobs:
+  build:
+    docker:
+      #
+      # cimg/base
+      # - https://circleci.com/developer/ja/images/image/cimg/base
+      #
+      - image: cimg/base:current
+    steps:
+      - checkout
+      # 任意の操作
+      - run: pwd
+      - run: sudo apt-get update && sudo apt-get install -y tree && tree -a
