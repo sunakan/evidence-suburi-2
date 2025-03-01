@@ -9,6 +9,8 @@ steps:
         #!/usr/bin/env sh
         set -eu
         echo "pwd: ${PWD}"
+        echo "ls -alh"
+        ls -alh
         # プロジェクトの値と変数
         # https://circleci.com/docs/ja/variables/
         echo "現在ビルド中のブランチ名: ${CIRCLE_BRANCH}"
