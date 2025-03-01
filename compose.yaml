@@ -1,0 +1,13 @@
+---
+
+services:
+  db:
+    image: postgres:17-bookworm
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+    volumes:
+      - type: bind
+        source: ${PWD}/
+        target: /app/
+    ports:
+      - 5432:5432
