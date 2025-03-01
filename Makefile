@@ -20,8 +20,8 @@ export-csv:
 
 .PHONY: show-ddl
 show-ddl:
-	ls -1 data/ | xargs -I{} bash scripts/03-show-ddl.sh data/{}
+	@docker compose run --rm tool bash -c 'ls -1 data/ | xargs -I{} bash scripts/03-show-ddl.sh data/{}'
 
 .PHONY: import-dataset
 import-dataset:
-	ls -1 data/ | xargs -I{} bash scripts/04-import-dataset.sh data/{}
+	@docker compose run --rm tool bash -c 'ls -1 data/ | xargs -I{} bash scripts/04-import-dataset.sh data/{}'
