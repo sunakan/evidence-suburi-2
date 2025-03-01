@@ -1,4 +1,10 @@
 FROM node:22-bookworm-slim
+#
+# duckdb
+# https://github.com/duckdb/duckdb/releases
+# circleci cli
+# https://github.com/CircleCI-Public/circleci-cli/releases
+#
 ENV DUCKDB_VERSION=1.2.0
 ENV CIRCLECI_CLI_VERSION=0.1.31425
 
