@@ -33,7 +33,6 @@ executors:
     my-circleci-cli:
         docker:
             - image: ghcr.io/sunakan/evidence-suburi-2-tool:latest
-        working_directory: /app
 jobs:
     validate-config:
         executor:

@@ -6,6 +6,5 @@
 #
 executors:
   my-circleci-cli:
-    working_directory: /app
     docker:
       - image: ghcr.io/sunakan/evidence-suburi-2-tool:latest
