@@ -4,6 +4,10 @@
 
 ライセンス: cc0 を選ぶ
 
+## ghcr(github container registry)
+
+- https://github.com/sunakan?tab=packages
+
 ## evidence
 
 - degit
