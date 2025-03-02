@@ -38,3 +38,7 @@ build-and-push-image:
 	docker tag "${IMAGE_REPO}:latest" "${IMAGE_REPO}:${IMAGE_TAG}"
 	docker push "${IMAGE_REPO}:latest"
 	docker push "${IMAGE_REPO}:${IMAGE_TAG}"
+
+.PHONY: npm-build
+npm-build:
+	docker compose run --rm evidence bash -c 'npm run sources && npm run build'
