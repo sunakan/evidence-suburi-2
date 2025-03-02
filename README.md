@@ -16,3 +16,12 @@
 ```shell
 npx degit evidence-dev/template my-evidence
 ```
+
+## デプロイ
+
+- [evidence cloud](https://evidence.app/app)
+  - https://sunakan-evidence-suburi-2.evidence.app/
+- [netlify](https://app.netlify.com/)
+  - https://sunakan-evidence-suburi-2.netlify.app/
+- [vercel](https://vercel.com/)
+  - https://evidence-suburi-2.vercel.app/
